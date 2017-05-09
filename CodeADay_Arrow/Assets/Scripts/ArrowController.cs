@@ -18,7 +18,11 @@ public class ArrowController : MonoBehaviour {
 		transform.up = myRB.velocity;
 	}
 
-//	void OnCollisionEnter(GameObject other){
-//		if(other.tag)
-//	}
+	void OnCollisionEnter(Collision other){
+		if (other.gameObject.CompareTag ("Target")) {
+			Destroy (other.gameObject);
+		}
+		Destroy(gameObject);
+	}
+
 }
